@@ -127,7 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="OOP_lab5.cpp" />
+    <ClCompile Include="ArraySizeException.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MyArray.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ArraySizeException.h" />
+    <ClInclude Include="MyArray.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
