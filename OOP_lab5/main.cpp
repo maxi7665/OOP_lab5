@@ -10,6 +10,8 @@ int main()
     try
     {
         MyArray* arr = new MyArray(new double[10] {1, 2, 3, 4, 5, 6, 7, 8, 9, 0}, 10);
+
+        delete arr;
     }
     catch (ArraySizeException e)
     {
@@ -21,6 +23,8 @@ int main()
         MyArray* arr = new MyArray(new double[12] {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, 12);
 
         arr->getBetweenMaxMinProduct();
+
+        delete arr;
     }
     catch (std::string e)
     {
@@ -36,6 +40,8 @@ int main()
         cout << "Array: " << arr->getArrayStr() << endl;
         cout << "Positive elements sum: " << arr->getPositiveElementsSum() << endl;
         cout << "Product of elements situated between absolute max and min: " << arr->getBetweenMaxMinProduct() << endl;
+
+        delete arr;
     }
     catch (...)
     {
