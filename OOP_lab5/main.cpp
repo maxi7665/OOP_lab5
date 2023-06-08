@@ -3,12 +3,16 @@
 #include "MyArray.h"
 #include "ArraySizeException.h"
 
+#define ARRAY_SIZE 12
+
 int main()
 {
     cout << "LR#5 VAR 2" << endl << endl;
 
     try
     {
+        cout << "MyArray defined size: " << ARRAY_SIZE << ". Size of creating array: " << 10 << endl;
+
         MyArray* arr = new MyArray(new double[10] {1, 2, 3, 4, 5, 6, 7, 8, 9, 0}, 10);
 
         delete arr;
@@ -18,9 +22,29 @@ int main()
         cout << "Catched error: " << e.what() << endl;
     }
 
+    cout << endl;
+
     try
     {
-        MyArray* arr = new MyArray(new double[12] {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, 12);
+        const int length = 12;
+
+        double* sourceArray = new double[12] {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+
+        cout << "Source array: ";
+
+        for (int i = 0; i < length; i++)
+        {
+            if (i > 0)
+            {
+                cout << ", ";
+            }
+
+            cout << sourceArray[i];
+        }
+
+        cout << endl;
+
+        MyArray* arr = new MyArray(sourceArray, length);
 
         arr->getBetweenMaxMinProduct();
 
